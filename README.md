@@ -1,4 +1,8 @@
-# Authorization
+# Status
+
+[![Build Status](https://travis-ci.org/TheSoftwareHouse/react-router-permissions.svg?branch=master)](https://travis-ci.org/TheSoftwareHouse/react-router-permissions) [![Code Coverage](https://codecov.io/gh/TheSoftwareHouse/react-router-permissions/branch/master/graph/badge.svg)](https://codecov.io/gh/TheSoftwareHouse/react-router-permissions) [![License](https://img.shields.io/npm/l/@tshio/react-router-permissions.svg)](https://github.com/TheSoftwareHouse/react-router-permissions/blob/master/LICENSE) [![Version](https://img.shields.io/npm/v/@tshio/react-router-permissions.svg)](https://www.npmjs.com/package/@tshio/react-router-permissions)
+
+# react-router-permissions
 
 ## Installation
 
@@ -278,3 +282,8 @@ class Header extends React.Component {
 | --------------------- | --------------------------------- | -------- | ----------------------------------------------------------------------------------------------------- |
 | requires              | `*`                               | `true`   | Requirement that will be used in access attempt call                                                  |
 | authorizationStrategy | `(permissions, requirement) => *` | `false`  | Function that if passed will override `authorizationStrategy` passed to nearest `PermissionsProvider` |
+
+## Development
+
+We welcome all contributions. Please read our [CONTRIBUTING.md](https://github.com/TheSoftwareHouse/react-router-permissions/blob/master/CONTRIBUTING.md) first.
+You can submit any ideas as [GitHub issues](https://github.com/TheSoftwareHouse/react-router-permissions/issues).

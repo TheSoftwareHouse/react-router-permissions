@@ -1,0 +1,12 @@
+language: node_js
+
+node_js:
+  - "lts/*"
+
+script:
+  - yarn install
+  - yarn flow
+  - yarn test
+  - yarn codecov
+
+cache: yarn
