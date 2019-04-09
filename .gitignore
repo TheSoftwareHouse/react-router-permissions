@@ -1,0 +1,11 @@
+es
+/*.js
+build
+
+node_modules
+coverage
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log
