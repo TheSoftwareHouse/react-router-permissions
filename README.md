@@ -1,6 +1,6 @@
 # Status
 
-[![Build Status](https://travis-ci.org/TheSoftwareHouse/react-router-permissions.svg?branch=master)](https://travis-ci.org/TheSoftwareHouse/react-router-permissions) [![Code Coverage](https://codecov.io/gh/TheSoftwareHouse/react-router-permissions/branch/master/graph/badge.svg)](https://codecov.io/gh/TheSoftwareHouse/react-router-permissions) [![License](https://img.shields.io/npm/l/@tshio/react-router-permissions.svg)](https://github.com/TheSoftwareHouse/react-router-permissions/blob/master/LICENSE) [![Version](https://img.shields.io/npm/v/@tshio/react-router-permissions.svg)](https://www.npmjs.com/package/@tshio/react-router-permissions)
+[![Build Status](https://travis-ci.org/TheSoftwareHouse/react-router-permissions.svg?branch=master)](https://travis-ci.org/TheSoftwareHouse/react-router-permissions) [![Code Coverage](https://codecov.io/gh/TheSoftwareHouse/react-router-permissions/branch/master/graph/badge.svg)](https://codecov.io/gh/TheSoftwareHouse/react-router-permissions) [![License](https://img.shields.io/npm/l/@tshio/react-router-permissions.svg)](https://github.com/TheSoftwareHouse/react-router-permissions/blob/master/LICENSE.md) [![Version](https://img.shields.io/npm/v/@tshio/react-router-permissions.svg)](https://www.npmjs.com/package/@tshio/react-router-permissions)
 
 # react-router-permissions
 
