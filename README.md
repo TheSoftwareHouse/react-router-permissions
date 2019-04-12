@@ -20,9 +20,9 @@ Goal of this package is to provide abstraction layer for handling authorization 
 The only requirement for `AuthorizedRoute` to work is to have any kind `Router` and at least one `PermissionsProvider`
 higher in your component tree.
 
-A [codesandbox example](https://codesandbox.io/s/qvr0p0jzo4) is available.
+A [codesandbox example](https://codesandbox.io/s/github/TheSoftwareHouse/react-router-permissions/tree/master/example/) is available.
 
-[![Edit React Router Permissions - Basic Usage](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/qvr0p0jzo4?fontsize=14)
+[![Edit React Router Permissions - Basic Usage](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/TheSoftwareHouse/react-router-permissions/tree/master/example/?fontsize=14)
 
 ```js
 import React from 'react';

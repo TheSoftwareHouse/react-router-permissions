@@ -1,0 +1,28 @@
+.roles__buttons button {
+  height: 38px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.roles {
+  margin-bottom: 30px;
+}
+
+.roles__roles {
+  margin-bottom: 10px;
+}
+
+.app {
+  padding: 10px;
+}
+
+.app pre {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.app p {
+  max-width: 800px;
+}
