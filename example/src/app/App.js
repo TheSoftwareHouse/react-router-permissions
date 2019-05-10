@@ -7,6 +7,7 @@ import { CantTouchThis } from './CantTouchThis/CantTouchThis';
 import { IAmAllYours } from './IAmAllYours/IAmAllYours';
 import { ROLES as ROLES_ENUM } from '../store/actions';
 import { RolesContainer } from './Roles/RolesContainer';
+import { PermissionsRoles } from './PermissionsRoles/PermissionsRoles';
 
 const authorizationStrategy = (currentRoles, requirement) => {
   return currentRoles.find(role => role === requirement);
@@ -28,6 +29,7 @@ export const App = ({ roles }) => {
 
       <PermissionsProvider permissions={roles} authorizationStrategy={authorizationStrategy}>
         <RolesContainer />
+        <PermissionsRoles />
         <BrowserRouter>
           <Switch>
             <AuthorizedRoute path="/forusers" authorizationStrategy={loginAuthorizationStrategy}>
