@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { PermissionsProvider, AuthorizedRoute } from '@tshio/react-router-permissions';
+import { PermissionsProvider, AuthorizedRoute, AuthorizedSection } from '@tshio/react-router-permissions';
 
 import { Home } from './Home/Home';
 import { CantTouchThis } from './CantTouchThis/CantTouchThis';
@@ -30,6 +30,15 @@ export const App = ({ roles }) => {
       <PermissionsProvider permissions={roles} authorizationStrategy={authorizationStrategy}>
         <RolesContainer />
         <PermissionsRoles />
+        <AuthorizedSection requires={ROLES_ENUM.ADMIN}>
+          {({ isAuthorized }) =>
+            isAuthorized ? (
+              <React.Fragment>
+                <h2>Sections for admins only</h2>
+              </React.Fragment>
+            ) : null
+          }
+        </AuthorizedSection>
         <BrowserRouter>
           <Switch>
             <AuthorizedRoute path="/forusers" authorizationStrategy={loginAuthorizationStrategy}>

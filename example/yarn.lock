@@ -1012,7 +1012,7 @@
 
 "@tshio/react-router-permissions@../tshio-react-router-permissions-1.1.1.tgz":
   version "1.1.1"
-  resolved "../tshio-react-router-permissions-1.1.1.tgz#2e49f6a175ede2b08d3b7bd3226fc69691c153f6"
+  resolved "../tshio-react-router-permissions-1.1.1.tgz#6a2a5b4475944fc5b1a0df2cd6ee6334b8416c28"
 
 "@types/node@*":
   version "12.0.0"

@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@tshio/react-router-permissions": "1.1.0",
+    "@tshio/react-router-permissions": "../tshio-react-router-permissions-1.1.1.tgz",
     "bootstrap": "4.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

@@ -2,6 +2,8 @@
 
 import * as React from 'react';
 import { PermissionsContext } from '../permissions-context/permissions.context';
+import { useAuthorize } from '../hooks/useAuthorize';
+import { usePermissions } from '../hooks/usePermissions';
 
 export type AuthorizedSectionProps = {
   requires: *,
@@ -11,21 +13,28 @@ export type AuthorizedSectionProps = {
   }) => React.Node,
 };
 
-export class AuthorizedSection extends React.Component<AuthorizedSectionProps> {
-  render() {
-    const { requires, authorizationStrategy: overrideStrategy, children } = this.props;
+export const AuthorizedSection = ({
+  requires,
+  authorizationStrategy: overrideStrategy,
+  children,
+}: AuthorizedSectionProps) => {
+  const { authorizationStrategy } = usePermissions();
+  const { isAuthorized, setAuthorization } = useAuthorize(
+    requires,
+    overrideStrategy ? overrideStrategy : authorizationStrategy,
+  );
 
-    return (
-      <PermissionsContext.Consumer>
-        {({ authorizationStrategy, permissions }) => {
-          const isAuthorized = overrideStrategy
-            ? overrideStrategy(permissions, requires)
-            : authorizationStrategy(permissions, requires);
-          return children({
-            isAuthorized,
-          });
-        }}
-      </PermissionsContext.Consumer>
-    );
-  }
-}
+  return (
+    <PermissionsContext.Consumer>
+      {({ authorizationStrategy, permissions }) => {
+        overrideStrategy
+          ? setAuthorization(overrideStrategy(permissions, requires))
+          : setAuthorization(authorizationStrategy(permissions, requires));
+
+        return children({
+          isAuthorized,
+        });
+      }}
+    </PermissionsContext.Consumer>
+  );
+};
