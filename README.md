@@ -287,6 +287,13 @@ class Header extends React.Component {
 | requires              | `*`                               | `true`   | Requirement that will be used in access attempt call                                                  |
 | authorizationStrategy | `(permissions, requirement) => *` | `false`  | Function that if passed will override `authorizationStrategy` passed to nearest `PermissionsProvider` |
 
+### Hooks
+
+| Hook's name    | Arguments                                   | Description                                     |
+| -------------- | ------------------------------------------- | ----------------------------------------------- |
+| usePermissions | `null`                                      | Returns context of nearest Permissions Provider |
+| useAuthorize   | `(requirement, authorizationStrategy) => *` | Returns a value of authorization                |
+
 ## Development
 
 We welcome all contributions. Please read our [CONTRIBUTING.md](https://github.com/TheSoftwareHouse/react-router-permissions/blob/master/CONTRIBUTING.md) first.

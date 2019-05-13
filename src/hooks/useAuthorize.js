@@ -1,12 +1,7 @@
-import { useState } from 'react';
 import { usePermissions } from './usePermissions';
 
 export const useAuthorize = (requires, authorizationStrategy) => {
-  const { permissions } = usePermissions();
-  const [isAuthorized, setAuthorization] = useState(authorizationStrategy(permissions, requires));
+  const { permissions, authorizationStrategy: defaultStrategy } = usePermissions();
 
-  return {
-    isAuthorized,
-    setAuthorization,
-  };
+  return authorizationStrategy ? authorizationStrategy(permissions, requires) : defaultStrategy(permissions, requires);
 };

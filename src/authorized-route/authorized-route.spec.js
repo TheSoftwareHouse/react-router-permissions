@@ -25,7 +25,7 @@ describe('Authorized Route', () => {
         <MemoryRouter initialEntries={['/restricted']}>
           <Switch>
             <AuthorizedRoute path="/restricted" requires="isLogged">
-              {({ isAuthorized }) => authorization(isAuthorized)}
+              {({ isAuthorized }) => <span>{authorization(isAuthorized)}</span>}
             </AuthorizedRoute>
           </Switch>
         </MemoryRouter>
@@ -41,7 +41,7 @@ describe('Authorized Route', () => {
         <MemoryRouter initialEntries={['/restricted']}>
           <Switch>
             <AuthorizedRoute path="/restricted" requires="isLogged">
-              {({ isAuthorized }) => authorization(isAuthorized)}
+              {({ isAuthorized }) => <span>{authorization(isAuthorized)}</span>}
             </AuthorizedRoute>
           </Switch>
         </MemoryRouter>
@@ -57,7 +57,7 @@ describe('Authorized Route', () => {
         <MemoryRouter initialEntries={['/restricted']}>
           <Switch>
             <AuthorizedRoute path="/restricted" requires="isLogged" authorizationStrategy={otherStrategy}>
-              {({ isAuthorized }) => authorization(isAuthorized)}
+              {({ isAuthorized }) => <span>{authorization(isAuthorized)}</span>}
             </AuthorizedRoute>
           </Switch>
         </MemoryRouter>
