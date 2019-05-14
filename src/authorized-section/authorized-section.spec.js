@@ -20,7 +20,9 @@ describe('Authorized Section', () => {
     const authorization = jest.fn();
     mount(
       <PermissionsProvider permissions={{ isLogged: false }} authorizationStrategy={strategy}>
-        <AuthorizedSection requires="isLogged">{({ isAuthorized }) => authorization(isAuthorized)}</AuthorizedSection>
+        <AuthorizedSection requires="isLogged">
+          {({ isAuthorized }) => <span>{authorization(isAuthorized)}</span>}
+        </AuthorizedSection>
       </PermissionsProvider>,
     );
 
@@ -31,7 +33,9 @@ describe('Authorized Section', () => {
     const authorization = jest.fn();
     mount(
       <PermissionsProvider permissions={{ isLogged: true }} authorizationStrategy={strategy}>
-        <AuthorizedSection requires="isLogged">{({ isAuthorized }) => authorization(isAuthorized)}</AuthorizedSection>
+        <AuthorizedSection requires="isLogged">
+          {({ isAuthorized }) => <span>{authorization(isAuthorized)}</span>}
+        </AuthorizedSection>
       </PermissionsProvider>,
     );
 
@@ -43,7 +47,7 @@ describe('Authorized Section', () => {
     mount(
       <PermissionsProvider permissions={{ isLogged: true }} authorizationStrategy={strategy}>
         <AuthorizedSection requires="isLogged" authorizationStrategy={otherStrategy}>
-          {({ isAuthorized }) => authorization(isAuthorized)}
+          {({ isAuthorized }) => <span>{authorization(isAuthorized)}</span>}
         </AuthorizedSection>
       </PermissionsProvider>,
     );

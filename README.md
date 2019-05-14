@@ -263,6 +263,25 @@ class Header extends React.Component {
 }
 ```
 
+We decided to use hooks in our library. Therefore, we are introducing 2 our hooks: `useAuthorize` which one is returning a value of authorization.
+
+```js
+export const AdminSection = ({ requires, authorizationStrategy }) => {
+  const isAuthorized = useAuthorize(requires, authorizationStrategy);
+
+  return isAuthorized ? <h2>Admin New's</h2> : null;
+};
+```
+
+Second hook is `usePermission` which one is returning an object with `permissions` and `authorizationStrategy` from the nearest `PermissionsProvider`.
+
+```js
+export const PermissionsRoles = () => {
+  const { permissions } = usePermissions();
+  return <span>Roles length: {permissions.length} </span>;
+};
+```
+
 ## Config options
 
 ### PermissionsProvider
@@ -286,6 +305,13 @@ class Header extends React.Component {
 | --------------------- | --------------------------------- | -------- | ----------------------------------------------------------------------------------------------------- |
 | requires              | `*`                               | `true`   | Requirement that will be used in access attempt call                                                  |
 | authorizationStrategy | `(permissions, requirement) => *` | `false`  | Function that if passed will override `authorizationStrategy` passed to nearest `PermissionsProvider` |
+
+### Hooks
+
+| Hook's name    | Arguments                                    | Description                                                                                                               |
+| -------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| usePermissions | `null`                                       | Returns context of nearest Permissions Provider                                                                           |
+| useAuthorize   | `(requirement, authorizationStrategy?) => *` | Returns a value of authorization. AuthorizationStrategy argument is optional. If passed, will override existing strategy. |
 
 ## Development
 

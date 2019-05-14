@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import { PermissionsContext } from '../permissions-context/permissions.context';
+import { useAuthorize } from '../hooks/useAuthorize';
 
 export type AuthorizedSectionProps = {
   requires: *,
@@ -11,21 +11,8 @@ export type AuthorizedSectionProps = {
   }) => React.Node,
 };
 
-export class AuthorizedSection extends React.Component<AuthorizedSectionProps> {
-  render() {
-    const { requires, authorizationStrategy: overrideStrategy, children } = this.props;
+export const AuthorizedSection = ({ requires, authorizationStrategy, children }: AuthorizedSectionProps) => {
+  const isAuthorized = useAuthorize(requires, authorizationStrategy);
 
-    return (
-      <PermissionsContext.Consumer>
-        {({ authorizationStrategy, permissions }) => {
-          const isAuthorized = overrideStrategy
-            ? overrideStrategy(permissions, requires)
-            : authorizationStrategy(permissions, requires);
-          return children({
-            isAuthorized,
-          });
-        }}
-      </PermissionsContext.Consumer>
-    );
-  }
-}
+  return children({ isAuthorized });
+};
