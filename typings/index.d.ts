@@ -31,6 +31,11 @@ type PermissionProviderProps = {
   children: ReactNode;
 };
 
+type Permissions = {
+  permissions: AnyObject;
+  authorizationStrategy: authorizationStrategy<any, any>;
+}
+
 export const AuthorizedSection: ComponentType<AuthorizedSectionProps>;
 
 export const AuthorizedRoute: ComponentType<AuthorizedRouteProps>;
@@ -42,3 +47,7 @@ export const atLeastOneStrategy: authorizationStrategy<BooleanObject, Array<stri
 export const permissionsStrategy: authorizationStrategy<BooleanObject, string>;
 
 export const roleBasedStrategy: authorizationStrategy<Array<string>, string>;
+
+export const useAuthorize: (requirement?: any, authorizationStrategy?: authorizationStrategy<any, any>) => boolean;
+
+export const usePermissions: () => Permissions;
